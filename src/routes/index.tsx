@@ -1,15 +1,23 @@
 import React from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { ROUTES } from "../constants/routes";
+import Navigation from "../features/home";
 import ErrorsBoundary from "../shared/errors/ErrorsBoundary";
 import Layout from "../shared/layout";
 
-const Routes = () => {
+const CardsRoutes = () => {
   return (
-    <Layout>
-      <ErrorsBoundary>
-        <div>456</div>
-      </ErrorsBoundary>
-    </Layout>
+    <BrowserRouter>
+      <Layout>
+        <ErrorsBoundary>
+          <Routes>
+            <Route path={ROUTES.root} element={<Navigation />} />
+            <Route path={ROUTES.home} element={<Navigation />} />
+          </Routes>
+        </ErrorsBoundary>
+      </Layout>
+    </BrowserRouter>
   );
 };
 
-export default Routes;
+export default CardsRoutes;
