@@ -9,31 +9,35 @@ export const NavigationTitle = styled.h2`
 export const SelectList = styled.table`
   table-layout: fixed;
   width: 100%;
+`;
 
-  tr {
-    display: flex;
-    flex-direction: row;
-    padding: 10px 0;
-    cursor: pointer;
-    border-bottom: 1px solid #e5e5e5;
-    transition-duration: 0.2s;
+export const TR = styled.tr<{ disabled?: boolean }>(({ disabled }) => {
+  return `
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px 0;
+  cursor: ${disabled ? "initial" : "pointer"};
+  border-bottom: 1px solid #e5e5e5;
+  transition-duration: 0.2s;
 
-    &:hover {
-      background-color: #f5f5f5;
-    }
+  &:hover {
+    background-color: ${disabled ? "initial" : "#f5f5f5"};
+  }
 
-    td {
-      padding: 5px 5px 0;
-      font-size: 20px;
-      color: gray;
-    }
+  td {
+    padding: 5px 5px 0;
+    font-size: 20px;
+    color: gray;
   }
 `;
+});
 
 export const IconTD = styled.td`
   display: flex;
   align-items: center;
   flex: 0.1;
+  margin-right: 15px;
 
   span {
     font-size: 32px;
@@ -42,7 +46,7 @@ export const IconTD = styled.td`
 
 export const TD = styled.td<{ flex: number }>(({ flex }) => {
   return `
-    padding: 10px;
+    padding: 10px 0;
     flex: ${flex};
     `;
 });
