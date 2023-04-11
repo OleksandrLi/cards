@@ -1,11 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { ROUTES, WordsRoutes } from "../../constants/routes";
-import { IconTD, NavigationTitle, SelectList, TD, TR } from "./styles";
+import {
+  HomeContainer,
+  IconTD,
+  NavigationTitle,
+  SelectList,
+  TD,
+  TR,
+} from "./styles";
 
 const Home = () => {
   return (
-    <div>
+    <HomeContainer>
       <NavigationTitle>Select words type</NavigationTitle>
       <SelectList>
         <tbody>
@@ -76,7 +83,7 @@ const Home = () => {
           </TR>
         </tbody>
       </SelectList>
-    </div>
+    </HomeContainer>
   );
 };
 

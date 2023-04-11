@@ -1,5 +1,13 @@
 import styled from "styled-components";
 
+export const HomeContainer = styled.div`
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 15px;
+  border: 1px solid #e6e6e6;
+  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.6);
+`;
+
 export const NavigationTitle = styled.h2`
   margin-left: 35px;
   font-size: 32px;
