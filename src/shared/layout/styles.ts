@@ -22,11 +22,20 @@ export const MainContainer = styled.main`
   //background-size: contain;
   //background-repeat: no-repeat;
   //filter: opacity(0.2);
+
+  @media (max-width: 680px) {
+    min-height: 100vh;
+    margin-top: 0;
+  }
 `;
 
 export const Main = styled.div`
-  margin: 10vh auto 0;
+  margin: 80px auto 0;
   width: 100%;
   max-width: 600px;
-  height: 100%;
+  min-height: 100%;
+
+  @media (max-width: 680px) {
+    margin-top: 60px;
+  }
 `;

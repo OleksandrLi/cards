@@ -1,5 +1,13 @@
 import styled from "styled-components";
 
+export const Container = styled.div`
+  @media (max-width: 680px) {
+    height: calc(100vh - 130px);
+    display: flex;
+    flex-direction: column;
+  }
+`;
+
 export const WordContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -14,6 +22,13 @@ export const WordContainer = styled.div`
 
   div {
     margin: 10px 0;
+  }
+
+  @media (max-width: 680px) {
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 10vh;
+    padding: 60px 0 50px;
   }
 `;
 
@@ -50,7 +65,15 @@ export const NextButton = styled.div`
   cursor: pointer;
   transition: 0.2s;
 
-  &:hover {
+  &:hover,
+  &:active {
     background-color: rgba(255, 165, 0, 0.2);
+  }
+
+  @media (max-width: 680px) {
+    align-self: flex-end;
+    margin: 0 auto 50px;
+    font-size: 40px;
+    border-width: 3px;
   }
 `;

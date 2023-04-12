@@ -2,7 +2,13 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { WordsRoutes } from "../../constants/routes";
 import { selectArray } from "../../helpers/selectArray";
-import { Description, EnglishWord, NextButton, WordContainer } from "./styles";
+import {
+  Container,
+  Description,
+  EnglishWord,
+  NextButton,
+  WordContainer,
+} from "./styles";
 
 const Word = () => {
   const { type } = useParams();
@@ -24,7 +30,7 @@ const Word = () => {
   return (
     <>
       {word.length ? (
-        <>
+        <Container>
           <WordContainer>
             <EnglishWord>{word[0]}</EnglishWord>
             <Description arrayLength={word.length}>{word[1]}</Description>
@@ -33,7 +39,7 @@ const Word = () => {
             ) : null}
           </WordContainer>
           <NextButton onClick={handleNextWord}>Next Word</NextButton>
-        </>
+        </Container>
       ) : null}
     </>
   );

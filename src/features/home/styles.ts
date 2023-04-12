@@ -6,6 +6,12 @@ export const HomeContainer = styled.div`
   border-radius: 15px;
   border: 1px solid #e6e6e6;
   box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.6);
+
+  @media (max-width: 680px) {
+    padding: 20px 0;
+    box-shadow: none;
+    border: none;
+  }
 `;
 
 export const NavigationTitle = styled.h2`
@@ -38,6 +44,10 @@ export const TR = styled.tr<{ disabled?: boolean }>(({ disabled }) => {
     font-size: 20px;
     color: gray;
   }
+  
+  @media (max-width: 680px) {
+    padding: 10px 20px;
+  }
 `;
 });
 
@@ -50,11 +60,24 @@ export const IconTD = styled.td`
   span {
     font-size: 32px;
   }
+
+  @media (max-width: 680px) {
+    margin-right: 10px;
+  }
 `;
 
 export const TD = styled.td<{ flex: number }>(({ flex }) => {
   return `
     padding: 10px 0;
     flex: ${flex};
+    
+    @media (max-width: 680px) {
+      padding: 10px;
+      flex: ${flex * 1.3};
+      
+      &:last-of-type {
+        flex: ${flex};
+      }
+    }
     `;
 });

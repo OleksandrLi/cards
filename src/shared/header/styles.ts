@@ -16,6 +16,10 @@ export const HeaderContainer = styled.header`
     max-width: max-content;
     margin: 0 auto;
   }
+
+  @media (max-width: 680px) {
+    height: 60px;
+  }
 `;
 
 // export const MainMenuButton = styled(Link)`
@@ -31,4 +35,8 @@ export const HeaderTitle = styled.h1`
   font-weight: 400;
   font-family: "Pacifico", cursive;
   text-align: center;
+
+  @media (max-width: 680px) {
+    font-size: 30px;
+  }
 `;

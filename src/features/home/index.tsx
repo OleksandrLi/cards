@@ -21,7 +21,7 @@ const Home = () => {
               <IconTD>
                 <span className="material-symbols-outlined">child_care</span>
               </IconTD>
-              <TD flex={0.4}>Words A1</TD>
+              <TD flex={0.5}>Words A1</TD>
               <TD flex={1}>Very Easy</TD>
             </TR>
           </Link>
@@ -30,7 +30,7 @@ const Home = () => {
               <IconTD>
                 <span className="material-symbols-outlined">face</span>
               </IconTD>
-              <TD flex={0.4}>Words A2</TD>
+              <TD flex={0.5}>Words A2</TD>
               <TD flex={1}>Easy</TD>
             </TR>
           </Link>
@@ -41,7 +41,7 @@ const Home = () => {
                   brightness_medium
                 </span>
               </IconTD>
-              <TD flex={0.4}>Words B1</TD>
+              <TD flex={0.5}>Words B1</TD>
               <TD flex={1}>Medium</TD>
             </TR>
           </Link>
@@ -50,7 +50,7 @@ const Home = () => {
               <IconTD>
                 <span className="material-symbols-outlined">balance</span>
               </IconTD>
-              <TD flex={0.4}>Words B2</TD>
+              <TD flex={0.5}>Words B2</TD>
               <TD flex={1}>Hard</TD>
             </TR>
           </Link>
@@ -59,7 +59,7 @@ const Home = () => {
               <IconTD>
                 <span className="material-symbols-outlined">smart_toy</span>
               </IconTD>
-              <TD flex={0.4}>Words C1</TD>
+              <TD flex={0.5}>Words C1</TD>
               <TD flex={1}>Very Hard</TD>
             </TR>
           </Link>
@@ -68,7 +68,7 @@ const Home = () => {
               <IconTD>
                 <span className="material-symbols-outlined">pets</span>
               </IconTD>
-              <TD flex={0.4}>Animals</TD>
+              <TD flex={0.5}>Animals</TD>
               <TD flex={1}>Not so Easy</TD>
             </TR>
           </Link>
@@ -77,7 +77,7 @@ const Home = () => {
             <IconTD>
               <span className="material-symbols-outlined">apartment</span>
             </IconTD>
-            <TD flex={0.4}>&quot;Don`t use&quot;</TD>
+            <TD flex={0.5}>&quot;Don`t use&quot;</TD>
             <TD flex={1}>Try to explain with rules</TD>
             {/*</Link>*/}
           </TR>
