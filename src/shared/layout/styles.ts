@@ -1,6 +1,4 @@
 import styled from "styled-components";
-// @ts-ignore
-import mainBackground from "../../assets/img/main-background.jpg";
 
 export const LayoutContainer = styled.div`
   width: 100%;
@@ -17,11 +15,6 @@ export const MainContainer = styled.main`
   height: 100%;
   min-height: calc(100vh - 80px);
   margin-top: 80px;
-  //background-image: url(${mainBackground});
-  //background-position: center center;
-  //background-size: contain;
-  //background-repeat: no-repeat;
-  //filter: opacity(0.2);
 
   @media (max-width: 680px) {
     min-height: 100vh;

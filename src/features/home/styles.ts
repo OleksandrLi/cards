@@ -14,75 +14,17 @@ export const HomeContainer = styled.div`
   }
 `;
 
-export const NavigationTitle = styled.h2`
-  margin-left: 35px;
-  font-size: 32px;
+export const RulesButton = styled.div`
+  display: block;
+  margin-top: 10px;
+  margin-left: 15px;
+  padding: 10px 15px;
+  font-size: 22px;
+  font-weight: 500;
   color: #0402a3;
+  cursor: pointer;
 
   @media (max-width: 680px) {
-    margin-left: 0;
-    text-align: center;
+    display: none;
   }
 `;
-
-export const SelectList = styled.table`
-  table-layout: fixed;
-  width: 100%;
-`;
-
-export const TR = styled.tr<{ disabled?: boolean }>(({ disabled }) => {
-  return `
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  padding: 10px 0;
-  cursor: ${disabled ? "initial" : "pointer"};
-  border-bottom: 1px solid #e5e5e5;
-  transition-duration: 0.2s;
-
-  &:hover {
-    background-color: ${disabled ? "initial" : "#f5f5f5"};
-  }
-
-  td {
-    padding: 5px 5px 0;
-    font-size: 20px;
-    color: ${disabled ? "#adadad" : "#808080"};
-  }
-  
-  @media (max-width: 680px) {
-    padding: 10px 20px;
-  }
-`;
-});
-
-export const IconTD = styled.td`
-  display: flex;
-  align-items: center;
-  flex: 0.1;
-  margin-right: 15px;
-
-  span {
-    font-size: 32px;
-  }
-
-  @media (max-width: 680px) {
-    margin-right: 10px;
-  }
-`;
-
-export const TD = styled.td<{ flex: number }>(({ flex }) => {
-  return `
-    padding: 10px 0;
-    flex: ${flex};
-    
-    @media (max-width: 680px) {
-      padding: 10px;
-      flex: ${flex * 1.3};
-      
-      &:last-of-type {
-        flex: ${flex};
-      }
-    }
-    `;
-});
