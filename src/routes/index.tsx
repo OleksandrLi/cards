@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { ROUTES } from "../constants/routes";
 import HomePage from "../pages/HomePage";
 import WordPage from "../pages/WordPage";
@@ -15,6 +15,7 @@ const CardsRoutes = () => {
             <Route path={ROUTES.root} element={<HomePage />} />
             <Route path={ROUTES.home} element={<HomePage />} />
             <Route path={ROUTES.dynamic.wordsCard()} element={<WordPage />} />
+            <Route path="*" element={<Navigate to={ROUTES.home} replace />} />
           </Routes>
         </ErrorsBoundary>
       </Layout>

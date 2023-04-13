@@ -6,7 +6,7 @@ export const FooterContainer = styled.header`
   width: 100%;
   padding: 20px;
   background-color: #ffffff;
-  border-bottom: 1px solid gray;
+  border-bottom: 1px solid #808080;
   display: flex;
   justify-content: center;
   align-items: center;

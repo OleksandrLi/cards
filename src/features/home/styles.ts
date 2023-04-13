@@ -18,6 +18,11 @@ export const NavigationTitle = styled.h2`
   margin-left: 35px;
   font-size: 32px;
   color: #0402a3;
+
+  @media (max-width: 680px) {
+    margin-left: 0;
+    text-align: center;
+  }
 `;
 
 export const SelectList = styled.table`
@@ -42,7 +47,7 @@ export const TR = styled.tr<{ disabled?: boolean }>(({ disabled }) => {
   td {
     padding: 5px 5px 0;
     font-size: 20px;
-    color: gray;
+    color: ${disabled ? "#adadad" : "#808080"};
   }
   
   @media (max-width: 680px) {

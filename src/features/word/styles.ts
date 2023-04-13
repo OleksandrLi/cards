@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css, keyframes } from "styled-components";
 
 export const Container = styled.div`
   @media (max-width: 680px) {
@@ -8,29 +8,53 @@ export const Container = styled.div`
   }
 `;
 
-export const WordContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 50px 20px 40px;
-  margin: auto;
-  max-width: 400px;
-  background: #ffffff;
-  border-color: #729eff;
-  border-style: solid;
-  border-width: 35px 5px 5px;
-
-  div {
-    margin: 10px 0;
-  }
-
-  @media (max-width: 680px) {
-    width: 100%;
-    box-sizing: border-box;
-    margin-top: 10vh;
-    padding: 60px 0 50px;
-  }
+const rotate = keyframes`
+  0% { transform: rotateY(0deg) scale(1); }
+  50% { transform: rotateY(180deg) scale(0.9); }
+  100% { transform: rotateY(360deg) scale(1); }
 `;
+
+const opacity = keyframes`
+  0% { opacity: 1; }
+  10% { opacity: 1; }
+  11% { opacity: 0; }
+  80% { opacity: 0; }
+  81% { opacity: 1; }
+  100% { opacity: 1; }
+`;
+
+export const WordContainer = styled("div")<{
+  isRotate?: boolean;
+  opacityAnimation?: boolean;
+}>(({ isRotate }) => {
+  return css`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 20px 40px;
+    margin: auto;
+    max-width: 400px;
+    background: #ffffff;
+    border-color: #729eff;
+    border-style: solid;
+    border-width: 35px 5px 5px;
+    animation-name: ${isRotate ? rotate : "none"};
+    animation-duration: 1s;
+
+    div {
+      margin: 10px 0;
+      animation-name: ${isRotate ? opacity : "none"};
+      animation-duration: 1s;
+    }
+
+    @media (max-width: 680px) {
+      width: 100%;
+      box-sizing: border-box;
+      margin-top: 10vh;
+      padding: 60px 0 50px;
+    }
+  `;
+});
 
 export const EnglishWord = styled.div`
   font-size: 44px;
