@@ -96,7 +96,7 @@ export const NextButton = styled.div`
 
   @media (max-width: 680px) {
     align-self: flex-end;
-    margin: 20px auto 50px;
+    margin: 20px auto 30px;
     font-size: 40px;
     border-width: 3px;
   }
