@@ -1,4 +1,4 @@
-export const wordsB1 = [
+export const WordsB1 = [
   ["To abolish", "[əˈbɒlɪʃ]", "Скасувати, знищувати, скасовувати"],
   ["To approve", "[əˈpruːv]", "Затвердити, схвалити"],
   ["To boast", "[bəʊst]", "Гордитися, хвалитися"],

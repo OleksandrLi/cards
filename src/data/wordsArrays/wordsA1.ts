@@ -1,4 +1,4 @@
-export const wordsA1 = [
+export const WordsA1 = [
   ["To be", "[tə biː]", "Бути"],
   ["To do", "[du]", "Робити"],
   ["To feel", "[fiːl]", "Відчувати"],

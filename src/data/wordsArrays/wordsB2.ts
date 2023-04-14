@@ -1,4 +1,4 @@
-export const wordsB2 = [
+export const WordsB2 = [
   ["To abhor", "[əbˈhɔː]", "Ненавидіти"],
   ["To abrogate", "[ˈæbrəʊgeɪt]", "Скасувати"],
   ["To abstain", "[əbˈsteɪn]", "Утриматися"],

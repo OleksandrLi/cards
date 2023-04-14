@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import ModalWindow from "../../shared/Modal";
+import ModalWindow from "../../shared/modal";
 import HomeTitle from "./components/HomeTitle";
 import RulesModal from "./components/RulesModal";
 import TypesList from "./components/TypesList";

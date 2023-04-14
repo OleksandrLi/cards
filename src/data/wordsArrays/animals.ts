@@ -1,4 +1,4 @@
-export const animals = [
+export const Animals = [
   ["frog", "жаба"],
   ["frogspawn", "жаб'яча ікра"],
   ["newt", "тритон"],
