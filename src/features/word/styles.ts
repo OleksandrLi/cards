@@ -31,7 +31,7 @@ export const WordContainer = styled("div")<{
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 50px 20px 40px;
+    padding: 40px 20px 30px;
     margin: auto;
     max-width: 400px;
     background: #ffffff;
@@ -96,7 +96,7 @@ export const NextButton = styled.div`
 
   @media (max-width: 680px) {
     align-self: flex-end;
-    margin: 0 auto 50px;
+    margin: 20px auto 50px;
     font-size: 40px;
     border-width: 3px;
   }
