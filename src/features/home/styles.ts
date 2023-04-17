@@ -28,3 +28,21 @@ export const RulesButton = styled.div`
     display: none;
   }
 `;
+
+export const ButtonsContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+`;
+
+export const CheckboxTitleContainer = styled.div`
+  margin: 20px 12px;
+  font-weight: 500;
+  font-size: 22px;
+  color: orange;
+
+  @media (max-width: 680px) {
+    margin: 25px auto;
+  }
+`;

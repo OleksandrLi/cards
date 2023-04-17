@@ -25,7 +25,6 @@ const opacity = keyframes`
 
 export const WordContainer = styled("div")<{
   isRotate?: boolean;
-  opacityAnimation?: boolean;
 }>(({ isRotate }) => {
   return css`
     display: flex;
@@ -72,6 +71,8 @@ export const Description = styled.div<{ arrayLength: number }>(
       font-weight: ${arrayLength === 2 ? "600" : "400"};
       font-style: ${arrayLength === 2 ? "initial" : "italic"};
       color: ${arrayLength === 2 ? "#000238" : "#8b8b8b"};
+      padding: 0 10px;
+      text-align: center;
     `;
   }
 );

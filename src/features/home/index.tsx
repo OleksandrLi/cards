@@ -1,12 +1,20 @@
 import React, { useState } from "react";
+import Checkbox from "../../shared/checkbox";
 import ModalWindow from "../../shared/modal";
 import HomeTitle from "./components/HomeTitle";
 import RulesModal from "./components/RulesModal";
+import Settings from "./components/Settings";
 import TypesList from "./components/TypesList";
-import { HomeContainer, RulesButton } from "./styles";
+import {
+  ButtonsContainer,
+  CheckboxTitleContainer,
+  HomeContainer,
+  RulesButton,
+} from "./styles";
 
 const Home = () => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+  const [isChecked, setIsChecked] = useState<boolean>(false);
 
   const handleOpen = () => {
     setIsModalOpen(true);
@@ -16,12 +24,19 @@ const Home = () => {
     setIsModalOpen(false);
   };
 
+  const toggleCheck = () => {
+    setIsChecked(!isChecked);
+  };
+
   return (
     <>
       <HomeContainer>
         <HomeTitle handleOpen={handleOpen} />
-        <TypesList />
-        <RulesButton onClick={handleOpen}>Rules of the game</RulesButton>
+        <TypesList isSettingsChecked={isChecked} />
+        <ButtonsContainer>
+          <RulesButton onClick={handleOpen}>Rules of the game</RulesButton>
+          <Settings isChecked={isChecked} toggleCheck={toggleCheck} />
+        </ButtonsContainer>
       </HomeContainer>
       <ModalWindow isOpen={isModalOpen} onClose={handleClose} hasCloseButton>
         <RulesModal />

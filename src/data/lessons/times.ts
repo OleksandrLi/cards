@@ -1,4 +1,4 @@
-export const timesForLessons = [
+export const TIMES = [
   "Present Simple",
   "Past Simple",
   "Future Simple",
@@ -10,7 +10,7 @@ export const timesForLessons = [
   "Future Continuous",
 ];
 
-export const questionsLessons = [
+export const QUESTIONS = [
   "General question",
   "Tag question",
   "Alternative question",
@@ -18,7 +18,9 @@ export const questionsLessons = [
   "Question to subject",
 ];
 
-export const specialQuestions = ["What", "When", "Why", "What", "When"];
+export const SPECIAL_QUESTIONS = ["What", "When", "Why", "What", "When"];
+
+export const TYPE_OF_SENTENCE = ["simple", "negative", "question"];
 
 // Додати через чекбокси які часи використовуютсья для уроку
 

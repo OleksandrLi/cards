@@ -4,7 +4,11 @@ import { ROUTES, WordsRoutes } from "../../../../constants/routes";
 import PopoverContent from "./PopoverContent";
 import { IconTD, SelectList, TD, TR } from "./styles";
 
-const TypesList = () => {
+type SettingsProps = {
+  isSettingsChecked: boolean;
+};
+
+const TypesList: React.FC<SettingsProps> = ({ isSettingsChecked }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const handleOpen = () => {
@@ -24,7 +28,13 @@ const TypesList = () => {
   return (
     <SelectList>
       <tbody>
-        <Link to={ROUTES.dynamic.wordsCard(WordsRoutes.A1)}>
+        <Link
+          to={
+            isSettingsChecked
+              ? ROUTES.dynamic.wordsSettings(WordsRoutes.A1)
+              : ROUTES.dynamic.wordsCard(WordsRoutes.A1)
+          }
+        >
           <TR>
             <IconTD>
               <span className="material-symbols-outlined">child_care</span>
@@ -33,7 +43,13 @@ const TypesList = () => {
             <TD flex={1}>Very Easy</TD>
           </TR>
         </Link>
-        <Link to={ROUTES.dynamic.wordsCard(WordsRoutes.A2)}>
+        <Link
+          to={
+            isSettingsChecked
+              ? ROUTES.dynamic.wordsSettings(WordsRoutes.A2)
+              : ROUTES.dynamic.wordsCard(WordsRoutes.A2)
+          }
+        >
           <TR>
             <IconTD>
               <span className="material-symbols-outlined">face</span>
@@ -42,7 +58,13 @@ const TypesList = () => {
             <TD flex={1}>Easy</TD>
           </TR>
         </Link>
-        <Link to={ROUTES.dynamic.wordsCard(WordsRoutes.B1)}>
+        <Link
+          to={
+            isSettingsChecked
+              ? ROUTES.dynamic.wordsSettings(WordsRoutes.B1)
+              : ROUTES.dynamic.wordsCard(WordsRoutes.B1)
+          }
+        >
           <TR>
             <IconTD>
               <span className="material-symbols-outlined">
@@ -53,7 +75,13 @@ const TypesList = () => {
             <TD flex={1}>Medium</TD>
           </TR>
         </Link>
-        <Link to={ROUTES.dynamic.wordsCard(WordsRoutes.B2)}>
+        <Link
+          to={
+            isSettingsChecked
+              ? ROUTES.dynamic.wordsSettings(WordsRoutes.B2)
+              : ROUTES.dynamic.wordsCard(WordsRoutes.B2)
+          }
+        >
           <TR>
             <IconTD>
               <span className="material-symbols-outlined">balance</span>
@@ -62,7 +90,13 @@ const TypesList = () => {
             <TD flex={1}>Hard</TD>
           </TR>
         </Link>
-        <Link to={ROUTES.dynamic.wordsCard(WordsRoutes.C1)}>
+        <Link
+          to={
+            isSettingsChecked
+              ? ROUTES.dynamic.wordsSettings(WordsRoutes.C1)
+              : ROUTES.dynamic.wordsCard(WordsRoutes.C1)
+          }
+        >
           <TR>
             <IconTD>
               <span className="material-symbols-outlined">smart_toy</span>
@@ -71,7 +105,13 @@ const TypesList = () => {
             <TD flex={1}>Very Hard</TD>
           </TR>
         </Link>
-        <Link to={ROUTES.dynamic.wordsCard(WordsRoutes.Animals)}>
+        <Link
+          to={
+            isSettingsChecked
+              ? ROUTES.dynamic.wordsSettings(WordsRoutes.Animals)
+              : ROUTES.dynamic.wordsCard(WordsRoutes.Animals)
+          }
+        >
           <TR>
             <IconTD>
               <span className="material-symbols-outlined">pets</span>
