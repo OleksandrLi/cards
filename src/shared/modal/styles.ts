@@ -26,7 +26,7 @@ export const Box = styled.aside`
   border-radius: 16px;
   padding: 24px;
   min-width: 512px;
-  background: var(--background3-color);
+  background: #ffffff;
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
   max-height: 80vh;
   overflow: hidden;

@@ -1,9 +1,26 @@
-import React from "react";
+import React, { FocusEvent, useState } from "react";
 import { Link } from "react-router-dom";
 import { ROUTES, WordsRoutes } from "../../../../constants/routes";
+import PopoverContent from "./PopoverContent";
 import { IconTD, SelectList, TD, TR } from "./styles";
 
 const TypesList = () => {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+
+  const handleOpen = () => {
+    setIsOpen(true);
+  };
+
+  const handleBlur = (e: FocusEvent) => {
+    if (!e.currentTarget.contains(e.relatedTarget)) {
+      setIsOpen(false);
+    }
+  };
+
+  const handleClose = () => {
+    setIsOpen(false);
+  };
+
   return (
     <SelectList>
       <tbody>
@@ -63,7 +80,13 @@ const TypesList = () => {
             <TD flex={1}>Not so Easy</TD>
           </TR>
         </Link>
-        <TR disabled>
+        <TR
+          disabled
+          onBlur={handleBlur}
+          onTouchStartCapture={handleOpen}
+          onMouseEnter={handleOpen}
+          onMouseLeave={handleClose}
+        >
           {/*<Link to={ROUTES.dynamic.wordsCard(WordsRoutes.DontUse)}>*/}
           <IconTD>
             <span className="material-symbols-outlined">apartment</span>
@@ -71,6 +94,7 @@ const TypesList = () => {
           <TD flex={0.5}>&quot;Don`t use&quot;</TD>
           <TD flex={1}>Try to explain with rules</TD>
           {/*</Link>*/}
+          <PopoverContent isOpen={isOpen} handleClose={handleClose} />
         </TR>
       </tbody>
     </SelectList>

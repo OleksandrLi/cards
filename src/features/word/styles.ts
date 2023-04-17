@@ -64,15 +64,15 @@ export const EnglishWord = styled.div`
 
 export const Description = styled.div<{ arrayLength: number }>(
   ({ arrayLength }) => {
-    return `
-  font-family: ${
-    arrayLength === 2 ? `"Francois One", sans-serif` : `"Chivo Mono", monospace`
-  };
-  font-size: ${arrayLength === 2 ? "30px" : "22px"};
-  font-weight: ${arrayLength === 2 ? "600" : "400"};
-  font-style: ${arrayLength === 2 ? "initial" : "italic"};
-  color: ${arrayLength === 2 ? "#000238" : "#8b8b8b"};
-`;
+    return css`
+      font-family: ${arrayLength === 2
+        ? `"Francois One", sans-serif`
+        : `"Chivo Mono", monospace`};
+      font-size: ${arrayLength === 2 ? "30px" : "22px"};
+      font-weight: ${arrayLength === 2 ? "600" : "400"};
+      font-style: ${arrayLength === 2 ? "initial" : "italic"};
+      color: ${arrayLength === 2 ? "#000238" : "#8b8b8b"};
+    `;
   }
 );
 
@@ -97,7 +97,7 @@ export const NextButton = styled.div`
   @media (max-width: 680px) {
     align-self: flex-end;
     margin: 20px auto 30px;
-    font-size: 40px;
-    border-width: 3px;
+    font-size: 28px;
+    border-width: 2px;
   }
 `;
