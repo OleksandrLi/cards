@@ -1,4 +1,5 @@
 import React from "react";
+import Slider from "../../shared/slider";
 import { NavigationTitle as Title } from "../home/components/HomeTitle/styles";
 import { HomeContainer as Container } from "../home/styles";
 
@@ -8,13 +9,13 @@ import { HomeContainer as Container } from "../home/styles";
  * 3. Збереження налаштувань в сторадж.
  * 4. Збереження тепершньго слова в сторадж.
  * 5. Видалення налаштувань зі стораджа коли покидаємо тип слів.
- * 8. Додати в резюме графкьель.
  *  */
 
 const LessonSettings: React.FC = () => {
   return (
     <Container>
-      <Title>Select settings</Title>
+      <Title>Settings</Title>
+      <Slider title={"Select time for each word"} step={1} min={0} max={15} />
     </Container>
   );
 };

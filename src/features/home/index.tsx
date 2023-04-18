@@ -1,16 +1,10 @@
 import React, { useState } from "react";
-import Checkbox from "../../shared/checkbox";
 import ModalWindow from "../../shared/modal";
 import HomeTitle from "./components/HomeTitle";
 import RulesModal from "./components/RulesModal";
 import Settings from "./components/Settings";
 import TypesList from "./components/TypesList";
-import {
-  ButtonsContainer,
-  CheckboxTitleContainer,
-  HomeContainer,
-  RulesButton,
-} from "./styles";
+import { ButtonsContainer, HomeContainer, RulesButton } from "./styles";
 
 const Home = () => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
