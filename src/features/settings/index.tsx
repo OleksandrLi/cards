@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import Slider from "../../shared/slider";
 import { NavigationTitle as Title } from "../home/components/HomeTitle/styles";
-import { HomeContainer as Container } from "../home/styles";
+import LinkButton from "./components/LinkButton";
+import { Container } from "./styles";
 
 /*
  * TODO:
@@ -12,10 +13,20 @@ import { HomeContainer as Container } from "../home/styles";
  *  */
 
 const LessonSettings: React.FC = () => {
+  const [value, setValue] = useState<number>(0);
+
   return (
     <Container>
       <Title>Settings</Title>
-      <Slider title={"Select time for each word"} step={1} min={0} max={15} />
+      <Slider
+        value={value}
+        setValue={setValue}
+        title={"Select time for each word"}
+        step={1}
+        min={0}
+        max={15}
+      />
+      <LinkButton value={value} />
     </Container>
   );
 };

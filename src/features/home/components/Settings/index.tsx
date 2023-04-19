@@ -13,7 +13,7 @@ const Settings: React.FC<SettingsProps> = ({ isChecked, toggleCheck }) => {
       <Checkbox
         isChecked={isChecked}
         toggleCheck={toggleCheck}
-        title={"Tense settings"}
+        title={"Custom settings"}
       />
     </CheckboxTitleContainer>
   );
