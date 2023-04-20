@@ -13,17 +13,21 @@ export const TR = styled.tr<{ disabled?: boolean }>(({ disabled }) => {
     align-items: center;
     padding: 10px 0;
     cursor: ${disabled ? "initial" : "pointer"};
-    border-bottom: 1px solid #e5e5e5;
+    border-bottom: 1px solid ${({ theme }) => theme.colors.home.list.border};
     transition-duration: 0.2s;
 
     &:hover {
-      background-color: ${disabled ? "initial" : "#f5f5f5"};
+      background-color: ${({ theme }) =>
+        disabled ? "initial" : theme.colors.home.list.hover};
     }
 
     td {
       padding: 5px 5px 0;
       font-size: 20px;
-      color: ${disabled ? "#adadad" : "#808080"};
+      color: ${({ theme }) =>
+        disabled
+          ? theme.colors.home.list.disabledText
+          : theme.colors.home.list.text};
     }
 
     @media (max-width: 680px) {

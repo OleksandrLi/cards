@@ -4,6 +4,7 @@ import styled from "styled-components";
 export const SliderTitle = styled.h4`
   margin: 0;
   padding-left: 6px;
+  color: ${({ theme }) => theme.colors.slider.title};
 `;
 
 export const SliderHorizontal = styled(ReactSlider)`
@@ -16,7 +17,7 @@ export const SliderHorizontal = styled(ReactSlider)`
     position: absolute;
     z-index: 100;
     background: #ffffff;
-    border: 5px solid #6200ee;
+    border: 5px solid ${({ theme }) => theme.colors.slider.track};
     border-radius: 100%;
     display: block;
     box-shadow: 0 0 2px 0 rgb(0 0 0 / 44%);
@@ -30,13 +31,13 @@ export const SliderHorizontal = styled(ReactSlider)`
     position: relative;
     top: 20px;
     height: 4px;
-    background: #6200ee;
+    background: ${({ theme }) => theme.colors.slider.track};
     border-radius: 2px;
   }
 
   .track.track-0 {
     left: 10px !important;
-    background: #6200ee;
+    background: ${({ theme }) => theme.colors.slider.track};
   }
 
   .track.track-1 {
@@ -58,9 +59,9 @@ export const SliderHorizontal = styled(ReactSlider)`
   }
 `;
 
-export const SliderText = styled.div`
-  margin-top: 50px;
+export const SliderText = styled.p`
+  margin: 50px 0 0;
   font-size: 18px;
   font-weight: 600;
-  color: #000000;
+  color: ${({ theme }) => theme.colors.slider.value};
 `;

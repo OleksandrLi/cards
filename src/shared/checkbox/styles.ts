@@ -30,7 +30,7 @@ export const CheckSquare = styled.div<{
       height: 18px;
       border: 2px solid #ffa500ff;
       border-radius: 4px;
-      background-color: ${isChecked ? "#ffa500ff" : "#ffffff"};
+      background-color: ${isChecked ? "#af7100" : "transparent"};
       transition-duration: 200ms;
     }
   `;
@@ -38,11 +38,12 @@ export const CheckSquare = styled.div<{
 
 export const Checked = styled.div`
   position: absolute;
-  top: 3px;
-  left: 0px;
+  top: 2px;
+  left: 0;
 
   span {
     color: #ffffff;
+    font-weight: 700;
     font-size: 22px;
   }
 `;

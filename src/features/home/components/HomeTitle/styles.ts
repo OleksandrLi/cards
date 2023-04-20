@@ -4,7 +4,7 @@ export const NavigationTitle = styled.h2`
   margin-left: 35px;
   margin-bottom: 50px;
   font-size: 32px;
-  color: #0402a3;
+  color: ${({ theme }) => theme.colors.home.title};
 
   @media (max-width: 680px) {
     display: flex;

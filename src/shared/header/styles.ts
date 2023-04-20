@@ -4,29 +4,24 @@ export const HeaderContainer = styled.header`
   position: fixed;
   height: 80px;
   width: 100%;
-  background-color: #e8eef9;
+  background-color: ${({ theme }) => theme.colors.header.bg};
   display: grid;
   align-items: center;
-  border-bottom: 1px solid #e6e6e6;
-  box-shadow: rgb(0, 0, 0) 0 5px 15px -10px;
+  border-bottom: 1px solid ${({ theme }) => theme.colors.header.border};
+  box-shadow: ${({ theme }) => theme.colors.header.shadow} 0 5px 15px -10px;
   z-index: 10;
 
   a {
     padding: 5px 10px;
     max-width: max-content;
     margin: 0 auto;
+    color: ${({ theme }) => theme.colors.header.text};
   }
 
   @media (max-width: 680px) {
     height: 60px;
   }
 `;
-
-// export const MainMenuButton = styled(Link)`
-//   font-size: 28px;
-//   font-weight: 600;
-//   margin-left: 24px;
-// `;
 
 export const HeaderTitle = styled.h1`
   max-width: max-content;
@@ -39,4 +34,9 @@ export const HeaderTitle = styled.h1`
   @media (max-width: 680px) {
     font-size: 30px;
   }
+`;
+
+export const HeaderToggleContainer = styled.div`
+  position: absolute;
+  right: 20px;
 `;

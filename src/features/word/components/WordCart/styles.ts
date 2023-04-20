@@ -25,8 +25,8 @@ export const WordContainer = styled("div")<{
     padding: 40px 20px 30px;
     margin: auto;
     max-width: 400px;
-    background: #ffffff;
-    border-color: #729eff;
+    background: ${({ theme }) => theme.colors.wordCard.bg};
+    border-color: ${({ theme }) => theme.colors.wordCard.cardBorder};
     border-style: solid;
     border-width: 35px 5px 5px;
     animation-name: ${isRotate ? rotate : "none"};
@@ -50,7 +50,7 @@ export const WordContainer = styled("div")<{
 export const EnglishWord = styled.div`
   font-size: 44px;
   font-weight: 600;
-  color: #020022;
+  color: ${({ theme }) => theme.colors.wordCard.text};
 `;
 
 export const Description = styled.div<{ arrayLength: number }>(
@@ -62,7 +62,10 @@ export const Description = styled.div<{ arrayLength: number }>(
       font-size: ${arrayLength === 2 ? "30px" : "22px"};
       font-weight: ${arrayLength === 2 ? "600" : "400"};
       font-style: ${arrayLength === 2 ? "initial" : "italic"};
-      color: ${arrayLength === 2 ? "#000238" : "#8b8b8b"};
+      color: ${({ theme }) =>
+        arrayLength === 2
+          ? theme.colors.wordCard.translate
+          : theme.colors.wordCard.transcription};
       padding: 0 10px;
       text-align: center;
     `;

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const RulesContainer = styled.div`
-  background-color: #ffffff;
+  background-color: ${({ theme }) => theme.colors.home.modal.bg};
   padding: 20px 20px 40px;
   border-radius: 16px;
 `;
@@ -9,6 +9,7 @@ export const RulesContainer = styled.div`
 export const Title = styled.h3`
   text-align: center;
   font-size: 28px;
+  color: ${({ theme }) => theme.colors.home.modal.text};
 `;
 
 export const ListOfRules = styled.ul`
@@ -24,6 +25,7 @@ export const ListOfRules = styled.ul`
     font-size: 20px;
     padding-left: 20px;
     margin: 12px 0;
+    color: ${({ theme }) => theme.colors.home.modal.text};
 
     @media (max-width: 680px) {
       list-style-position: inside;

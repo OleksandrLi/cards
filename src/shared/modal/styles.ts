@@ -11,7 +11,7 @@ export const Background = styled.div`
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: ${({ theme }) => theme.colors.modalBg};
 `;
 
 export const Box = styled.aside`
@@ -26,8 +26,7 @@ export const Box = styled.aside`
   border-radius: 16px;
   padding: 24px;
   min-width: 512px;
-  background: #ffffff;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+  background: transparent;
   max-height: 80vh;
   overflow: hidden;
   overflow-y: auto;

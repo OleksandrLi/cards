@@ -26,8 +26,8 @@ const Slider: React.FC<SliderProps> = ({
         thumbClassName="thumb"
         trackClassName="track"
         defaultValue={value}
-        onChange={(value: any) => {
-          setValue(value * 10);
+        onChange={(value: number | readonly number[] | undefined) => {
+          setValue(Number(value) * 10);
         }}
         step={step}
         min={min}

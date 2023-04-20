@@ -5,6 +5,6 @@ export const Container = styled.div`
     height: calc(100vh - 130px);
     display: flex;
     flex-direction: column;
-    padding-top: 5vh;
+    padding-top: 3vh;
   }
 `;

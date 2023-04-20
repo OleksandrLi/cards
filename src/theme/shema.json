@@ -1,0 +1,106 @@
+{
+  "data" : {
+    "light" : {
+      "type": "light",
+      "sizes": {
+        "button": {
+          "border": "2px",
+          "weight": "500"
+        }
+      },
+      "colors": {
+        "layout": "#ffffff",
+        "themeToggle": "#6200ee",
+        "modalBg": "#00000014",
+        "header": {
+          "bg": "#e8eef9",
+          "border": "#e6e6e6",
+          "shadow": "#ffffff",
+          "text": "#000000"
+        },
+        "home": {
+          "bg": "#ffffff",
+          "border": "#e6e6e6",
+          "shadow": "#00000099",
+          "text": "#0402a3",
+          "title": "#0402a3",
+          "rulesText": "#0402a3",
+          "list": {
+            "text": "#808080",
+            "disabledText": "#adadad",
+            "border": "#e5e5e5",
+            "hover": "#f5f5f5"
+          },
+          "modal": {
+            "bg": "#ffffff",
+            "text": "#000000"
+          }
+        },
+        "slider": {
+          "title": "#000000",
+          "value": "#000000",
+          "track": "#6200ee"
+        },
+        "wordCard": {
+          "bg": "#ffffff",
+          "cardBorder": "#729eff",
+          "text": "#020022",
+          "transcription": "#8b8b8b",
+          "translate": "#000238",
+          "timer": "#0216ff"
+        }
+      }
+    },
+    "dark" : {
+      "type": "dark",
+      "sizes": {
+        "button": {
+          "border": "3px",
+          "weight": "600"
+        }
+      },
+      "colors": {
+        "layout": "#262626",
+        "themeToggle": "#ffffff",
+        "modalBg": "#d1d1d180",
+        "header": {
+          "bg": "#123456",
+          "border": "#212121",
+          "shadow": "initial",
+          "text": "#ffffff"
+        },
+        "home": {
+          "bg": "#262626",
+          "border": "#191919",
+          "shadow": "#00000099",
+          "text": "#ffffff",
+          "title": "#fbfd5c",
+          "rulesText": "#fbfd5c",
+          "list": {
+            "text": "#ffffff",
+            "disabledText": "#b1b1b1",
+            "border": "#ffffff",
+            "hover": "#424242"
+          },
+          "modal": {
+            "bg": "#262626",
+            "text": "#ffffff"
+          }
+        },
+        "slider": {
+          "title": "#ffffff",
+          "value": "#ffffff",
+          "track": "#9b56ff"
+        },
+        "wordCard": {
+          "bg": "#262626",
+          "cardBorder": "#729eff",
+          "text": "#fbfd5c",
+          "transcription": "#dddddd",
+          "translate": "#feff9e",
+          "timer": "#729eff"
+        }
+      }
+    }
+  }
+}
