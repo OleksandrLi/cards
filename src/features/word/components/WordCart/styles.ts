@@ -19,6 +19,7 @@ export const WordContainer = styled("div")<{
   isRotate?: boolean;
 }>(({ isRotate }) => {
   return css`
+    cursor: pointer;
     display: flex;
     flex-direction: column;
     align-items: center;

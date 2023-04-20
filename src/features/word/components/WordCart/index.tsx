@@ -18,6 +18,7 @@ const WordCart: React.FC<WordCartProps> = ({
 }) => {
   return (
     <WordContainer
+      draggable={true}
       isRotate={isRotate}
       onAnimationStart={() => {
         localStorage.removeItem("leftForThisWord");

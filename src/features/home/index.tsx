@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ModalWindow from "../../shared/modal";
 import HomeTitle from "./components/HomeTitle";
 import RulesModal from "./components/RulesModal";
@@ -21,6 +21,12 @@ const Home = () => {
   const toggleCheck = () => {
     setIsChecked(!isChecked);
   };
+
+  useEffect(() => {
+    localStorage.removeItem("time");
+    localStorage.removeItem("leftForThisWord");
+    localStorage.removeItem("word");
+  }, []);
 
   return (
     <>

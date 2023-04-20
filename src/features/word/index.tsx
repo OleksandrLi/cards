@@ -39,6 +39,8 @@ const Word: React.FC<WordProps> = ({ setHelmetWord }) => {
   useEffect(() => {
     if (!prevWord) {
       handleNextWord();
+    } else {
+      setHelmetWord(prevWord.split(",")[0]);
     }
   }, []);
 
