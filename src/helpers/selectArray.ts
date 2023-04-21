@@ -1,6 +1,7 @@
 import { WordsRoutes } from "../constants/routes";
 import {
   Animals,
+  Food,
   WordsA1,
   WordsA2,
   WordsB1,
@@ -22,6 +23,8 @@ export const selectArray = (type: WordsRoutes) => {
       return WordsC1;
     case "Animals":
       return Animals;
+    case "Food":
+      return Food;
     default:
       return WordsA1;
   }

@@ -15,5 +15,6 @@ export enum WordsRoutes {
   B2 = "B2",
   C1 = "C1",
   Animals = "Animals",
+  Food = "Food",
   DontUse = "DontUse",
 }
