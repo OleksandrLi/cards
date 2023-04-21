@@ -6,6 +6,8 @@ import * as themes from "../../theme/shema.json";
 
 export interface ThemeContext {
   // eslint-disable-next-line
+  selectedTheme: any;
+  // eslint-disable-next-line
   setSelectedTheme: React.Dispatch<any>;
 }
 
@@ -36,7 +38,7 @@ const ThemeLayout: React.FC<ThemeLayoutProps> = ({ children }) => {
     <>
       {themeLoaded ? (
         <ThemeProvider theme={selectedTheme}>
-          <ThemeContext.Provider value={{ setSelectedTheme }}>
+          <ThemeContext.Provider value={{ selectedTheme, setSelectedTheme }}>
             {children}
           </ThemeContext.Provider>
         </ThemeProvider>

@@ -1,5 +1,6 @@
 import dayjs from "dayjs";
 import React from "react";
+import { getTimeForWord } from "../../../../helpers/getStorageItem";
 import Loader from "../Loader";
 import { Description, EnglishWord, WordContainer } from "./styles";
 
@@ -27,7 +28,7 @@ const WordCart: React.FC<WordCartProps> = ({
         }, 500);
       }}
       onAnimationEnd={() => {
-        const timeForWord = localStorage.getItem("time");
+        const timeForWord = getTimeForWord();
         const time = dayjs()
           .add(Number(timeForWord), "seconds")
           .startOf("seconds");

@@ -1,5 +1,9 @@
 import dayjs from "dayjs";
 import React, { useEffect, useState } from "react";
+import {
+  getLeftTime,
+  getTimeForWord,
+} from "../../../../helpers/getStorageItem";
 import { Container } from "./styles";
 import Loader from "./TimerLoader";
 
@@ -8,7 +12,7 @@ type TimerProps = {
 };
 
 const Timer: React.FC<TimerProps> = ({ isRotate }) => {
-  const leftTimeForWord = localStorage.getItem("leftForThisWord");
+  const leftTimeForWord = getLeftTime();
 
   const leftTime = dayjs(leftTimeForWord).diff(
     dayjs().startOf("seconds"),
@@ -32,8 +36,8 @@ const Timer: React.FC<TimerProps> = ({ isRotate }) => {
       clearInterval(interval);
     }
 
-    const timePerCard = localStorage.getItem("time");
-    const leftTimeForWord = localStorage.getItem("leftForThisWord");
+    const timePerCard = getTimeForWord();
+    const leftTimeForWord = getLeftTime();
 
     let leftTimeF;
 

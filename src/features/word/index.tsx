@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { WordsRoutes } from "../../constants/routes";
+import { clearStorage } from "../../helpers/clearStorage";
+import { getTimeForWord, SAVED_WORD } from "../../helpers/getStorageItem";
 import { selectArray } from "../../helpers/selectArray";
-import Next from "./components/NextButton";
+import Buttons from "./components/Buttons";
 import Timer from "./components/Timer";
 import WordCart from "./components/WordCart";
 import { Container } from "./styles";
@@ -12,14 +14,12 @@ type WordProps = {
 };
 
 const Word: React.FC<WordProps> = ({ setHelmetWord }) => {
-  const timeForWord = localStorage.getItem("time");
+  const timeForWord = getTimeForWord();
 
   const { type } = useParams();
 
-  const prevWord = localStorage.getItem("word");
-
   const [word, setWord] = useState<string[]>(
-    prevWord ? prevWord.split(",") : []
+    SAVED_WORD ? SAVED_WORD.split(",") : []
   );
   const [isRotate, setIsRotate] = useState<boolean>(false);
 
@@ -37,18 +37,16 @@ const Word: React.FC<WordProps> = ({ setHelmetWord }) => {
   };
 
   useEffect(() => {
-    if (!prevWord) {
+    if (!SAVED_WORD) {
       handleNextWord();
     } else {
-      setHelmetWord(prevWord.split(",")[0]);
+      setHelmetWord(SAVED_WORD.split(",")[0]);
     }
   }, []);
 
   useEffect(() => {
     return () => {
-      localStorage.removeItem("time");
-      localStorage.removeItem("leftForThisWord");
-      localStorage.removeItem("word");
+      clearStorage();
     };
   }, []);
 
@@ -61,7 +59,7 @@ const Word: React.FC<WordProps> = ({ setHelmetWord }) => {
         isRotate={isRotate}
         handleNextWord={handleNextWord}
       />
-      <Next setIsRotate={setIsRotate} />
+      <Buttons isRotate={isRotate} setIsRotate={setIsRotate} />
     </Container>
   );
 };

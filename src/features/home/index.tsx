@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { clearStorage } from "../../helpers/clearStorage";
 import ModalWindow from "../../shared/modal";
 import HomeTitle from "./components/HomeTitle";
 import RulesModal from "./components/RulesModal";
@@ -23,9 +24,7 @@ const Home = () => {
   };
 
   useEffect(() => {
-    localStorage.removeItem("time");
-    localStorage.removeItem("leftForThisWord");
-    localStorage.removeItem("word");
+    clearStorage();
   }, []);
 
   return (
