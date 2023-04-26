@@ -7,6 +7,7 @@ import {
   WordsB1,
   WordsB2,
   WordsC1,
+  WordsC2,
 } from "../data/wordsArrays";
 
 export const selectArray = (type: WordsRoutes) => {
@@ -21,6 +22,8 @@ export const selectArray = (type: WordsRoutes) => {
       return WordsB2;
     case "C1":
       return WordsC1;
+    case "C2":
+      return WordsC2;
     case "Animals":
       return Animals;
     case "Food":

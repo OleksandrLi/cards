@@ -50,6 +50,14 @@ export const DATA_LIST: dataList[] = [
     settingsRoute: ROUTES.dynamic.wordsSettings(WordsRoutes.C1),
     wordRoute: ROUTES.dynamic.wordsCard(WordsRoutes.C1),
   },
+  {
+    id: "6_C2",
+    iconSpan: "smart_toy",
+    title: "Words C2",
+    describe: "Doom",
+    settingsRoute: ROUTES.dynamic.wordsSettings(WordsRoutes.C2),
+    wordRoute: ROUTES.dynamic.wordsCard(WordsRoutes.C2),
+  },
   // {
   //   id: "6_dontUse",
   //   iconSpan: "apartment",
