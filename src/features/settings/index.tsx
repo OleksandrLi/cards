@@ -1,7 +1,10 @@
 import React, { useState } from "react";
+import ModalWindow from "../../shared/modal";
 import Slider from "../../shared/slider";
 import { NavigationTitle as Title } from "../home/components/HomeTitle/styles";
-import LinkButton from "./components/LinkButton";
+import CreateGameButton from "./components/LinkButton";
+import MultiplayerModal from "./components/MultiplayerModal";
+import Players from "./components/Players";
 import { Container } from "./styles";
 
 /*
@@ -13,10 +16,24 @@ import { Container } from "./styles";
 
 const LessonSettings: React.FC = () => {
   const [value, setValue] = useState<number>(0);
+  const [playersMode, setPlayersMode] = useState({
+    one: true,
+    two: false,
+  });
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleOpenModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
 
   return (
     <Container>
       <Title>Settings</Title>
+      <Players playersMode={playersMode} setPlayersMode={setPlayersMode} />
       <Slider
         value={value}
         setValue={setValue}
@@ -25,7 +42,18 @@ const LessonSettings: React.FC = () => {
         min={0}
         max={15}
       />
-      <LinkButton value={value} />
+      <CreateGameButton
+        value={value}
+        playersMode={playersMode}
+        handleOpenModal={handleOpenModal}
+      />
+      <ModalWindow
+        isOpen={isModalOpen}
+        onClose={handleCloseModal}
+        hasCloseButton
+      >
+        <MultiplayerModal handleCloseModal={handleCloseModal} />
+      </ModalWindow>
     </Container>
   );
 };

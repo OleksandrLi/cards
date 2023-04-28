@@ -7,9 +7,13 @@ import { IconTD, SelectList, TD, TR } from "./styles";
 
 type SettingsProps = {
   isSettingsChecked: boolean;
+  handleOpenMode: () => void;
 };
 
-const TypesList: React.FC<SettingsProps> = ({ isSettingsChecked }) => {
+const TypesList: React.FC<SettingsProps> = ({
+  isSettingsChecked,
+  handleOpenMode,
+}) => {
   // const [isOpen, setIsOpen] = useState<boolean>(false);
   //
   // const handleOpen = () => {
@@ -29,6 +33,15 @@ const TypesList: React.FC<SettingsProps> = ({ isSettingsChecked }) => {
   return (
     <SelectList>
       <tbody>
+        <div onClick={handleOpenMode}>
+          <TR>
+            <IconTD>
+              <span className="material-symbols-outlined">liquor</span>
+            </IconTD>
+            <TD flex={0.5}>Multiplayer</TD>
+            <TD flex={1}>Join to your friends</TD>
+          </TR>
+        </div>
         {DATA_LIST.map((item) => {
           return (
             <Link

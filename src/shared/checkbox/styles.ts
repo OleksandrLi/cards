@@ -4,7 +4,7 @@ export const Container = styled.div`
   cursor: pointer;
   position: relative;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 15px;
 
   & > div {
@@ -30,7 +30,7 @@ export const CheckSquare = styled.div<{
       height: 18px;
       border: 2px solid #ffa500ff;
       border-radius: 4px;
-      background-color: ${isChecked ? "#af7100" : "transparent"};
+      background-color: ${isChecked ? "#e89700" : "transparent"};
       transition-duration: 200ms;
     }
   `;
@@ -38,7 +38,7 @@ export const CheckSquare = styled.div<{
 
 export const Checked = styled.div`
   position: absolute;
-  top: 2px;
+  top: 0;
   left: 0;
 
   span {

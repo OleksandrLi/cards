@@ -52,7 +52,7 @@ export const DATA_LIST: dataList[] = [
   },
   {
     id: "6_C2",
-    iconSpan: "smart_toy",
+    iconSpan: "settings_accessibility",
     title: "Words C2",
     describe: "Doom",
     settingsRoute: ROUTES.dynamic.wordsSettings(WordsRoutes.C2),

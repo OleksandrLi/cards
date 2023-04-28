@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const NextButton = styled.div`
+export const ButtonOrange = styled.div`
   font-size: 24px;
   font-weight: ${({ theme }) => theme.sizes.button.weight};
   width: max-content;
@@ -22,5 +22,15 @@ export const NextButton = styled.div`
     align-self: flex-end;
     margin: 20px auto 30px;
     font-size: 28px;
+  }
+`;
+
+export const ButtonBlue = styled(ButtonOrange)`
+  color: #003cff;
+  border: solid ${({ theme }) => theme.sizes.button.border} #003cff;
+
+  &:hover,
+  &:active {
+    background-color: rgba(0, 60, 255, 0.1);
   }
 `;
