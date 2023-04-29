@@ -33,15 +33,15 @@ const TypesList: React.FC<SettingsProps> = ({
   return (
     <SelectList>
       <tbody>
-        <div onClick={handleOpenMode}>
-          <TR>
-            <IconTD>
-              <span className="material-symbols-outlined">liquor</span>
-            </IconTD>
-            <TD flex={0.5}>Multiplayer</TD>
-            <TD flex={1}>Join to your friends</TD>
-          </TR>
-        </div>
+        {/*<div onClick={handleOpenMode}>*/}
+        {/*  <TR>*/}
+        {/*    <IconTD>*/}
+        {/*      <span className="material-symbols-outlined">liquor</span>*/}
+        {/*    </IconTD>*/}
+        {/*    <TD flex={0.5}>Multiplayer</TD>*/}
+        {/*    <TD flex={1}>Join to your friends</TD>*/}
+        {/*  </TR>*/}
+        {/*</div>*/}
         {DATA_LIST.map((item) => {
           return (
             <Link
