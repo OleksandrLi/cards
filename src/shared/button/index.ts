@@ -1,15 +1,15 @@
 import styled from "styled-components";
 
 export const ButtonOrange = styled.div`
-  font-size: 24px;
+  font-size: 22px;
   font-weight: ${({ theme }) => theme.sizes.button.weight};
   width: max-content;
-  padding: 10px 30px;
+  padding: 8px 26px;
   text-align: center;
   margin: 30px auto 100px;
   color: #ffa500;
   border: solid ${({ theme }) => theme.sizes.button.border} #ffa500;
-  border-radius: 25px;
+  border-radius: 20px;
   cursor: pointer;
   transition: 0.2s;
 

@@ -33,7 +33,7 @@ const LessonSettings: React.FC = () => {
   return (
     <Container>
       <Title>Settings</Title>
-      {/*<Players playersMode={playersMode} setPlayersMode={setPlayersMode} />*/}
+      <Players playersMode={playersMode} setPlayersMode={setPlayersMode} />
       <Slider
         value={value}
         setValue={setValue}

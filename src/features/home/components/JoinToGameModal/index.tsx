@@ -34,11 +34,7 @@ const JoinToGameModal: React.FC<JoinToGameModalProps> = ({
   return (
     <Container>
       <Title>Введіть своє ім&apos;я</Title>
-      <Input
-        title={"Введіть id гри, яким має поділитись гравець, що створив гру"}
-        value={id}
-        onChange={onChangeId}
-      />
+      <Input title={"Введіть id гри"} value={id} onChange={onChangeId} />
       <Input title={"Введіть своє ім'я"} value={name} onChange={onChangeName} />
 
       <ButtonsContainer>

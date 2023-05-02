@@ -53,7 +53,7 @@
           "translate": "#000238",
           "timer": "#0216ff",
           "buttons": {
-            "skip": {
+            "skipped": {
               "border": "#030260",
               "text": "#030260",
               "hover": "#f0f0f6"
@@ -61,7 +61,17 @@
             "next": {
               "border": "#ff8c00",
               "text": "#ff8c00",
-              "hover": "#fff5e6"
+              "hover": "#fff5e6",
+              "disabled": {
+                "border": "#696969ff",
+                "text": "#696969ff",
+                "hover": "#69696919"
+              }
+            },
+            "guessed": {
+              "border": "#009713",
+              "text": "#009713",
+              "hover": "#00971319"
             }
           }
         },
@@ -133,6 +143,11 @@
               "border": "#ff8c00",
               "text": "#ff8c00",
               "hover": "#171717"
+            },
+            "disabled": {
+              "border": "#696969ff",
+              "text": "#696969ff",
+              "hover": "#69696919"
             }
           }
         },

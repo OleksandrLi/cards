@@ -3,9 +3,11 @@ import {
   GUESSED_POINTS,
   PASSED_POINTS,
 } from "../../../../helpers/getStorageItem";
+import { useQuery } from "../../../home/hooks";
 import {
   ButtonText,
   Container,
+  GuessedButton,
   NextButton,
   Points,
   SkipButton,
@@ -17,63 +19,65 @@ type ButtonsProps = {
 };
 
 const Buttons: React.FC<ButtonsProps> = ({ isRotate, setIsRotate }) => {
+  const gameId = useQuery().get("gameId");
+
   const [passedPoints, setPassedPoints] = useState<number>(
     Number(PASSED_POINTS) || 0
   );
+
   const [guessedPoints, setGuessedPoints] = useState<number>(
     Number(GUESSED_POINTS) || 0
   );
 
-  const dragOverButton = (e: React.DragEvent<HTMLDivElement>) => {
-    e.preventDefault();
-  };
+  const [isDisableNextButton, setIsDisableNextButton] = useState<boolean>(
+    !!gameId
+  );
 
   const handlePassWord = () => {
-    if (isRotate) {
+    if (!isDisableNextButton) {
       return;
     }
     const newPoints = passedPoints + 1;
     localStorage.setItem("passedPoints", `${newPoints}`);
     setPassedPoints(newPoints);
-    setIsRotate(true);
+    setIsDisableNextButton(false);
   };
 
   const handleNextWord = () => {
     if (isRotate) {
       return;
     }
+    setIsDisableNextButton(!!gameId);
+    setIsRotate(true);
+  };
+
+  const handleGuessWord = () => {
+    if (!isDisableNextButton) {
+      return;
+    }
     const newPoints = guessedPoints + 1;
     localStorage.setItem("guessedPoints", `${newPoints}`);
     setGuessedPoints(guessedPoints + 1);
-    setIsRotate(true);
+    setIsDisableNextButton(false);
   };
 
   return (
     <Container>
-      <SkipButton
-        onClick={handlePassWord}
-        onDrop={() => {
-          handlePassWord();
-        }}
-        onDragOver={(e) => {
-          dragOverButton(e);
-        }}
-      >
-        <ButtonText>Skip card</ButtonText>
-        <Points>{passedPoints}</Points>
-      </SkipButton>
-      <NextButton
-        onClick={handleNextWord}
-        onDrop={() => {
-          handleNextWord();
-        }}
-        onDragOver={(e) => {
-          dragOverButton(e);
-        }}
-      >
-        <ButtonText>Next word</ButtonText>
-        <Points>{guessedPoints}</Points>
+      {gameId ? (
+        <SkipButton onClick={handlePassWord}>
+          <ButtonText>Skipped</ButtonText>
+          <Points>{passedPoints}</Points>
+        </SkipButton>
+      ) : null}
+      <NextButton disabled={isDisableNextButton} onClick={handleNextWord}>
+        Next
       </NextButton>
+      {gameId ? (
+        <GuessedButton onClick={handleGuessWord}>
+          <ButtonText>Guessed</ButtonText>
+          <Points>{guessedPoints}</Points>
+        </GuessedButton>
+      ) : null}
     </Container>
   );
 };

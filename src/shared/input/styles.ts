@@ -13,14 +13,14 @@ export const Title = styled.label`
 `;
 
 export const StyledInput = styled.input`
-  border: 2px solid #8d8d8d;
-  padding: 7px 12px;
-  font-size: 18px;
+  border: 1px solid #8d8d8d;
+  padding: 6px 10px;
+  font-size: 16px;
   color: #000000;
-  border-radius: 10px;
+  border-radius: 8px;
 
   &:focus {
-    border: 2px solid #383838;
+    border: 1px solid #000000;
     outline: none;
   }
 `;

@@ -4,7 +4,8 @@ export const ROUTES = {
   dynamic: {
     wordsSettings: (type: ":type" | WordsRoutes = ":type") =>
       `/words/settings/${type}`,
-    wordsCard: (type: ":type" | WordsRoutes = ":type") => `/words/${type}`,
+    wordsCard: (type: ":type" | WordsRoutes = ":type", gameId = "") =>
+      `/words/${type}${gameId ? `?gameId=${gameId}` : ""}`,
   },
 };
 

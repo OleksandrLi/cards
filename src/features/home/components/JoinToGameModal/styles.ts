@@ -6,7 +6,7 @@ export const Container = styled.div`
   border-radius: 16px;
 
   input {
-    width: 80%;
+    width: calc(80% + 10px);
     margin: auto;
   }
 
