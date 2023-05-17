@@ -4,19 +4,25 @@ import { WordsRoutes } from "../../constants/routes";
 import { clearStorage } from "../../helpers/clearStorage";
 import { getTimeForWord, SAVED_WORD } from "../../helpers/getStorageItem";
 import { selectArray } from "../../helpers/selectArray";
-import Buttons from "./components/Buttons";
-import Timer from "./components/Timer";
-import WordCart from "./components/WordCart";
+import { useQuery } from "../../hooks/useQuery";
+import { getGameApi } from "./api";
+import SoloGame from "./components/SoloGame";
+import TwoGame from "./components/TwoGame";
+import WaitingPlayersRoom from "./components/WaitingPlayersRoom";
 import { Container } from "./styles";
+import { Game } from "./types";
 
 type WordProps = {
   setHelmetWord: React.Dispatch<React.SetStateAction<string>>;
 };
 
 const Word: React.FC<WordProps> = ({ setHelmetWord }) => {
+  const gameId = useQuery().get("gameId");
   const timeForWord = getTimeForWord();
 
   const { type } = useParams();
+
+  const [game, setGame] = useState<null | Game>(null);
 
   const [word, setWord] = useState<string[]>(
     SAVED_WORD ? SAVED_WORD.split(",") : []
@@ -50,16 +56,30 @@ const Word: React.FC<WordProps> = ({ setHelmetWord }) => {
     };
   }, []);
 
+  useEffect(() => {
+    if (gameId) {
+      getGameApi(gameId).then((resp) => {
+        setGame(resp.data);
+      });
+    }
+  }, []);
+
   return (
     <Container>
-      {timeForWord ? <Timer isRotate={isRotate} /> : null}
-      <WordCart
-        word={word}
-        setIsRotate={setIsRotate}
-        isRotate={isRotate}
-        handleNextWord={handleNextWord}
-      />
-      <Buttons isRotate={isRotate} setIsRotate={setIsRotate} />
+      {game ? (
+        game.players.length < 2 ? (
+          <WaitingPlayersRoom idForShare={game.gameId} />
+        ) : (
+          <TwoGame timeForWord={timeForWord} isRotate={isRotate} />
+        )
+      ) : (
+        <SoloGame
+          word={word}
+          isRotate={isRotate}
+          setIsRotate={setIsRotate}
+          handleNextWord={handleNextWord}
+        />
+      )}
     </Container>
   );
 };

@@ -1,18 +1,25 @@
-import "./index.css";
+import "./constants/socket";
 import React from "react";
-import ReactDOM from "react-dom";
-// import io from "socket.io-client";
+import ReactDOM from "react-dom/client";
+import { Provider } from "react-redux";
 import CardsRoutes from "./routes";
 import ThemeLayout from "./shared/theme";
-
-// const socket = io("http://localhost:3001/");
+import store from "./store";
+import GlobalStyle from "./theme/styles";
 
 const App: React.FC = () => {
   return (
-    <ThemeLayout>
-      <CardsRoutes />
-    </ThemeLayout>
+    <Provider store={store}>
+      <ThemeLayout>
+        <GlobalStyle />
+        <CardsRoutes />
+      </ThemeLayout>
+    </Provider>
   );
 };
 
-ReactDOM.render(<App />, document.getElementById("root"));
+const root = ReactDOM.createRoot(
+  document.getElementById("root") as HTMLElement
+);
+
+root.render(<App />);

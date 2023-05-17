@@ -3,7 +3,7 @@ import {
   GUESSED_POINTS,
   PASSED_POINTS,
 } from "../../../../helpers/getStorageItem";
-import { useQuery } from "../../../home/hooks";
+import { useQuery } from "../../../../hooks/useQuery";
 import {
   ButtonText,
   Container,

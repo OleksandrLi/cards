@@ -1,8 +1,10 @@
 import React, { useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
-import { ROUTES, WordsRoutes } from "../../../../constants/routes";
+import { useNavigate } from "react-router-dom";
+import { ROUTES } from "../../../../constants/routes";
+import socket from "../../../../constants/socket";
 import { ButtonBlue, ButtonOrange } from "../../../../shared/button";
 import Input from "../../../../shared/input";
+import { getGameApi, joinToGameApi } from "../../../word/api";
 import { ButtonsContainer, Container, Title } from "./styles";
 
 type JoinToGameModalProps = {
@@ -12,7 +14,6 @@ type JoinToGameModalProps = {
 const JoinToGameModal: React.FC<JoinToGameModalProps> = ({
   handleCloseModal,
 }) => {
-  const { type } = useParams();
   const navigate = useNavigate();
 
   const [name, setName] = useState("");
@@ -27,8 +28,19 @@ const JoinToGameModal: React.FC<JoinToGameModalProps> = ({
   };
 
   const handleCreateGame = () => {
-    handleCloseModal();
-    navigate(ROUTES.dynamic.wordsCard(type as WordsRoutes));
+    if (name && id) {
+      getGameApi(id).then(() => {
+        joinToGameApi({ gameId: id, playerName: name }).then((res) => {
+          socket.emit("Join to room", { gameId: id, playerName: name });
+          handleCloseModal();
+          navigate(
+            ROUTES.dynamic.wordsCard(res.data.typeWords, res.data.gameId)
+          );
+        });
+      });
+    } else {
+      return;
+    }
   };
 
   return (

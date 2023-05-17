@@ -5,7 +5,8 @@ export const Container = styled.div`
   padding: 20px 20px 40px;
   border-radius: 16px;
 
-  input {
+  input,
+  label {
     width: 80%;
     margin: auto;
   }

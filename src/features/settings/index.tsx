@@ -52,7 +52,10 @@ const LessonSettings: React.FC = () => {
         onClose={handleCloseModal}
         hasCloseButton
       >
-        <MultiplayerModal handleCloseModal={handleCloseModal} />
+        <MultiplayerModal
+          duration={value}
+          handleCloseModal={handleCloseModal}
+        />
       </ModalWindow>
     </Container>
   );
